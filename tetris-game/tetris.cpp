@@ -40,7 +40,7 @@ void start_ncurses()
 {
 	initscr();
 	cbreak();
-    noecho();
+        noecho();
 	curs_set(0);
 }
 
@@ -224,7 +224,7 @@ int main()
 	while (!exitFlag)
 	{
 		// MENU LOOP 
-        clear();
+                clear();
 		menu_screen();
 
 		if (exitFlag == 1)
@@ -238,7 +238,7 @@ int main()
 
 		// SETUP FOR DISPLAY (GAMEPLAY + SCORE BOARD + NEXT PIECE)
 		clear();
-	    initialise_board();
+	        initialise_board();
 		WINDOW *game = newwin(SCREEN_HEIGHT, SCREEN_WIDTH - 2, 3, xMax/2 - SCREEN_WIDTH);
 		WINDOW *score = newwin(SCREEN_HEIGHT / 5, SCREEN_WIDTH, 3, xMax/2 - 2);
 		WINDOW *next_piece = newwin(SCREEN_HEIGHT / 5 + 2, SCREEN_WIDTH / 2, 3, xMax/2 - SCREEN_WIDTH - (SCREEN_WIDTH / 2));
@@ -256,7 +256,7 @@ int main()
 		wrefresh(hold_piece);
 		srand(time(0));
 
-        long points = 0;
+                long points = 0;
 		long level = 1;
 		long num_lines = 0;
 
@@ -279,7 +279,7 @@ int main()
 		{
 			// PRINT SCORE
 			mvwprintw(score, 1, 1, "LEVEL: %ld", level);
-            mvwprintw(score, 2, 1, "SCORE: %ld", points);
+                        mvwprintw(score, 2, 1, "SCORE: %ld", points);
 			mvwprintw(score, 3, 1, "LINES: %ld", num_lines);
 			wrefresh(score);
             
@@ -353,8 +353,8 @@ int main()
 				}
 				else
 				{
-					// SLIGHT DELAY TO MOVE LEFT/RIGHT
-                    // TO IMPLEMENT IN THE FUTURE I GUESS
+					// SLIGHT DELAY TO MOVE LEFT/RIGHT TO IMPLEMENT IN THE FUTURE I GUESS
+                                        
 
 					// LOCK THE PIECES ON BOARD
 					for (int px = 0; px < 4; px += 1)
